@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0"
-    }
-  }
-}
-
 provider "azurerm" {
   features {}
 }
@@ -49,4 +40,11 @@ resource "azurerm_role_assignment" "aks_acr" {
   principal_id         = azurerm_kubernetes_cluster.aks.kubelet_identity[0].object_id
   role_definition_name = "AcrPull"
   scope                = azurerm_container_registry.acr.id
+}
+
+module "argo_app" {
+  source    = "./modules/argo_app"
+  base_name = var.base_name
+  repo_url  = var.repo_url
+  acr_name  = azurerm_container_registry.acr.name
 }

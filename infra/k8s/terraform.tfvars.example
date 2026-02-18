@@ -1,0 +1,5 @@
+# Example values for Terraform variables
+base_name = "<base_name>"
+location  = "<location>"
+repo_url = "<github repo>"
+argocd_token = "<argo cd token>"

@@ -3,17 +3,12 @@ variable "base_name" {
   type        = string
 }
 
-variable "location" {
-  description = "Azure region for resources"
-  type        = string
-}
-variable "repo_url" {
-  description = "URL of the Git repository for the ArgoCD application"
+variable "acr_name" {
+  description = "Name of the Azure Container Registry (ACR)"
   type        = string
 }
 
-variable "argocd_token" {
-  description = "Token for authenticating with ArgoCD"
+variable "repo_url" {
+  description = "URL of the Git repository for the ArgoCD application"
   type        = string
-  sensitive   = true
 }
