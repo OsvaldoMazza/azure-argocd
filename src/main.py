@@ -25,7 +25,7 @@ async def movies():
     return {
         "movies": [
             {"title": "Titanic", "year": 1997, "type": "Drama"},
-            {"title": "Rambo", "year": 1982, "type": "Action"},
+            {"title": "Rambo", "year": 1982, "type": "War"},
             {"title": "Scarface", "year": 1983, "type": "Crime"}
         ]
     }
