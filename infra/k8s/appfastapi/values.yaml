@@ -2,6 +2,8 @@
 image:
   acrName: "pending"      # This will be filled with <acr-name>
   baseName: "pending"     # This will be filled with <base-name>
+  repository: test15acr.azurecr.io/appfastapi
+  pullPolicy: Always
   tag: "latest"             # Version of your container
 
 # Deployment configuration
