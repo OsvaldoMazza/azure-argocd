@@ -1,0 +1,24 @@
+name: PR Check
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        working-directory: ./src
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        working-directory: .
+        run: python -m pytest -q

@@ -1,0 +1,6 @@
+gunicorn
+uvicorn
+fastapi
+pytest
+httpx
+azure-monitor-opentelemetry

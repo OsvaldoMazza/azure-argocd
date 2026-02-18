@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.image.baseName }}-webapp
+  labels:
+    app: {{ .Values.image.baseName }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.image.baseName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.image.baseName }}
+    spec:
+      containers:
+        - name: web-container
+          # Here concatenate the ACR name, base name, and tag to form the full image path
+          image: "{{ .Values.image.acrName }}.azurecr.io/{{ .Values.image.baseName }}-image:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.service.port }}

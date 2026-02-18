@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+
+  name: {{ .Values.image.baseName }}-service
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+      protocol: TCP
+  selector:
+    # Same value as in the Deployment's matchLabels to link the Service to the Pods
+    app: {{ .Values.image.baseName }}

@@ -1,0 +1,13 @@
+# Values for appfastapi Helm chart
+image:
+  acrName: "pending"      # This will be filled with <acr-name>
+  baseName: "pending"     # This will be filled with <base-name>
+  tag: "latest"             # Version of your container
+
+# Deployment configuration
+replicaCount: 2
+
+# Network configuration (to make your Web App accessible)
+service:
+  port: 80
+  type: LoadBalancer
