@@ -17,7 +17,7 @@ class GreetingRequest(BaseModel):
 @app.post("/greetings")
 async def greetings(request: GreetingRequest):
     logger.info("Greetings endpoint was called with name: %s", request.name)
-    return {"message": f"Hello {request.name}!"}
+    return {"message": f"Hello {request.name}! Welcome..."}
 
 @app.get("/movies")
 async def movies():
