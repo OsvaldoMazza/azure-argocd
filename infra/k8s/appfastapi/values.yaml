@@ -1,14 +1,12 @@
 # Values for appfastapi Helm chart
 image:
-  acrName: "pending"      # This will be filled with <acr-name>
-  baseName: "pending"     # This will be filled with <base-name>
+  acrName: "pending" # This will be filled with <acr-name>
+  baseName: "pending" # This will be filled with <base-name>
   repository: test15acr.azurecr.io/appfastapi
   pullPolicy: Always
-  tag: "latest"             # Version of your container
-
+  tag: "e672582bd5445497de6a5fd74dd80d1d61a4f09d" # Version of your container
 # Deployment configuration
 replicaCount: 2
-
 # Network configuration (to make your Web App accessible)
 service:
   port: 80
