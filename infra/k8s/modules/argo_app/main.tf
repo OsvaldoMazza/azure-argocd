@@ -18,8 +18,8 @@ resource "argocd_application" "webapp" {
     project = "default"
     source {
       repo_url        = var.repo_url
-      path            = "mi-web-app"
-      target_revision = "main"
+      path            = "appfastapi"  # Set the path to your application in the Git repository
+      target_revision = "master"      # Set the Branch or Tag you want to deploy
       helm {
         parameter {
           name  = "image.acrName"
